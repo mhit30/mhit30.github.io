@@ -22,16 +22,16 @@ body {
 }
 
 section {
-  margin: 50px 0;
+  margin: 24px 0;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  margin-bottom: 8px;
 }
 
 .content {
-  max-width: 800px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .photo-wrapper {
@@ -49,58 +49,83 @@ h2 {
   border-radius: 8px;
 }
 
-ul {
-  margin-top: 15px;
-  list-style: none;
-}
-
-ul li {
-  margin-bottom: 15px;
-}
-
-ul li a {
-  text-decoration: none;
-  color: #828282;
-  font-size: 1.3rem;
-  transition: color 0.3s ease;
-}
-
-ul li a:hover {
-  color: #333;
-}
-
-#gen_info {
-  margin-top: -25px;
-}
-#work {
-  margin-top: 10px;
-}
-#contact {
-  margin-top: 10px;
-}
-#project {
-  margin-top: -25px;
-}
-#contact_activities {
-  margin-top: 10px;
-}
-
-.role-list {
-  list-style: none;
-  margin-top: 15px;
-}
-
 .role-list li {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-  color: #555;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+.role-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.role-title {
+  font-weight: 700;
+  display: block;
+}
+
+.role-company {
+  display: block;
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+.role-date {
+  color: #666;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
+#contact {
+  margin-top: 8px;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.contact-list li {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px dashed #e6e6e6;
+}
+
+.contact-list li:last-child {
+  border-bottom: none;
+}
+
+.contact-list span {
+  color: #666;
+}
+
+.contact-list a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.contact-list a:hover {
+  color: #000;
+  text-decoration: underline;
 }
 
 .project-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 20px;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .project-card {
@@ -114,10 +139,13 @@ ul li a:hover {
   transition: transform 0.2s ease;
   word-wrap: break-word;
   overflow-wrap: anywhere;
+  text-decoration: none;
+  color: #828282;
 }
 
 .project-card:hover {
   transform: translateY(-3px);
+  color: #333;
 }
 
 .project-card img {
@@ -127,24 +155,74 @@ ul li a:hover {
   margin-bottom: 10px;
 }
 
-.project-card a {
+.project-card span {
   display: block;
-  text-decoration: none;
-  color: #828282;
   font-size: 1rem;
   margin-top: 8px;
   line-height: 1.3;
   white-space: normal;
   word-break: break-word;
-  transition: color 0.3s ease;
 }
 
-.project-card a:hover {
-  color: #333;
+a {
+  color: #444;
 }
 
-@media (max-width: 768px) {
+a:hover {
+  color: #000;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 6px 0;
+}
+
+.contact-inline {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 12px 0 24px 0;
+  padding: 0;
+}
+
+.contact-inline li a img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+
+.contact-inline li a:hover img {
+  transform: scale(1.15);
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}
+
+@media (max-width: 700px) {
+  .contact-list {
+    gap: 6px;
+  }
+  .contact-list li {
+    grid-template-columns: 90px 1fr;
+  }
+}
+
+@media (max-width: 600px) {
   .project-cards {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .project-cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
